@@ -10,18 +10,35 @@ public class Student {
     // fields, properties
     // has-a
     private String name;
+
     private String phone;
     private String email = "none";
+    private MyDate myDate;
 
-    private MyDate myDate = new MyDate(); //
+    private Address address;
 
     private double paidMoney;
-
-    private String city;
-    private String street;
-    private String houseNum;
-
     private int taskCount;
+
+    /*// return this
+    public Student(){
+        System.out.println("Default constructor");
+    }
+
+    public Student(String phone){
+        this.phone = phone;
+    }*/
+
+    public Student(String name, String phone, String email, MyDate myDate,
+                   Address address, double paidMoney, int taskCount) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.myDate = myDate;
+        this.address = address;
+        this.paidMoney = paidMoney;
+        this.taskCount = taskCount;
+    }
 
     public String convertStudent(){
 
@@ -30,15 +47,22 @@ public class Student {
                 name, phone, paidMoney, myDate.birthYear);
     }
 
-    public void init(String name, String phone, String city, double paidMoney) {
+    // getName(){}
 
-        Student me = this;
-
-        this.name = name;
-        this.phone = phone;
-        this.city = city;
-        this.paidMoney = paidMoney;
+    public String getName(){
+        return name;
     }
 
+    public void setName(String name){
+        if(name == null || name.isEmpty()){
+            System.out.println("wrong input name");
+            return;
+        }
+        this.name = name;
+    }
+
+    public Address getAddress(){
+        return address;
+    }
 
 }
