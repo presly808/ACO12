@@ -26,7 +26,7 @@ public class TestGroup {
                 student1 == student , "get", student.convertStudent(),
                 student1 != null ? student1.convertStudent() : "null");
 
-    }
+    }// dreams_come_true
 
 
 
