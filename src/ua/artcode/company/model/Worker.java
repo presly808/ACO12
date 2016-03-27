@@ -5,7 +5,7 @@ import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 /**
  * Created by serhii on 26.03.16.
  */
-public class Worker  {
+public abstract class Worker  {
 
     private int id;
     private String name;
@@ -56,9 +56,7 @@ public class Worker  {
         this.phone = phone;
     }
 
-    public void work(){
-        System.out.println("worker work()");
-    }
+    public abstract void work();// no body, must be overrode, within abstract class
 
     public Worker getOwnSelf(){
         return this;

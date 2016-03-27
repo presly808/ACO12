@@ -24,4 +24,9 @@ public class Tester extends Worker {
     public void test(){
         System.out.println("Tester test");
     }
+
+    @Override
+    public void work() {
+        System.out.println("Tester work");
+    }
 }

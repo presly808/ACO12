@@ -15,7 +15,7 @@ public class TestInheritance {
         coder.getId();
         coder.code();
 
-        Worker worker = new Worker();
+        Worker worker = new Coder();
 
         // Abstraction, is-a
         Worker worker2 = new Coder();
