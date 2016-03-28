@@ -1,0 +1,72 @@
+1. Inheritance
+	super
+
+   super parent Object
+	toString
+	equals
+
+   Abstract class, Interface
+	abstract method
+
+  Comparable, Comparator
+   UML(Class Diagram)
+       https://en.wikipedia.org/wiki/Class_diagram
+       http://www.objectmentor.com/resources/articles/umlClassDiagrams.pdf
+       http://www.ibm.com/developerworks/rational/library/content/RationalEdge/sep04/bell/
+       https://www.youtube.com/watch?v=3cmzqZzwNDM
+
+   Class and Relations(has-a)(Association->Composition,Aggregation)
+
+2. Debug or visualize next code! IMPORTANT TASK
+    https://github.com/presly808/ACO6/tree/master/src/ua/artcode/week1/contact_list
+
+    Debug all classwork
+
+
+BEFORE writing code, draw class diagram!!!
+
+3. Написать основные классы Студент, Предмет, если нужно будет дописывать новые
+   	Предмет содержит поля:
+   		имя
+   		количество часов в семестре
+   		количество проработанных часов студентом
+   		оценка студента за предмет
+
+   	методы:
+   		сдать экзамен
+   		показать информацию о предмете
+   		получить оценку студента за предмет
+
+   	Студент
+   	поля:
+   		Имя
+   		Адрес
+   		Предметы
+
+   	методы:
+   		учиться
+   		добавить предмет
+   		удалить предмет из списка последний
+   		показать всю информацию о предметах
+   		получить средний бал за все предметы
+
+4. Предметная область - Библиотека
+   Основные классы: Библиотека, Книга, Читатель
+
+   Написать программу позволяющую узнать следующую информацию:
+     1) посмотреть список читателей
+     2) посмотреть список доступных книг
+     3) добавить книгу в библиотеку
+     4) добавить читателя в список читателей
+     5) выдать книгу читателю (если книга есть в наличии).
+        Читателю запрещается брать больше 3-х книг.
+     6) посмотреть список книг, которые находятся у читателей
+     7) посмотреть список книг, которые находятся у конкретного читателя
+     8) добавить читателя в черный список (ему нельзя выдавать книги)
+     9) посмотреть книги конкретного автора
+     10) посмотреть новые книги (год издания выше 2013)
+
+4. read about Strategy,Observer,AbstractFactoryMethod,Singleton,Facade - design patterns
+	book Head First Design Patterns
+
+5*. draw class diagram for Kassa and ServiceCentre
