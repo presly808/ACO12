@@ -1,0 +1,32 @@
+1. static -> lifecycle, loading class
+		class loader, classpath
+
+    static: block, field, method, class
+    
+    final: class, method, field
+
+ 	See Immutable class
+		String, Wrapper
+
+    Wrappers -> Byte, Short, Integer...
+
+    List methods
+	
+	ArrayList class
+
+    List<Type> list = new ArrayList<>();
+
+    SOLID (OOD)
+
+	DESIGN PATTERNS
+        https://ru.wikipedia.org/wiki/Design_Patterns
+	Head First Design Patterns book
+
+    see main patterns
+	Strategy,Observer,AbstractFactoryMethod,Singleton,Facade, 		Proxy,Adapter,MVC
+
+    read head first design patterns
+
+2. finish prev homework
+
+3. make uml(class diagram) for a  task https://drive.google.com/drive/u/0/folders/0B3pUqYFBBsi-MWhReHJQTFZ1WkU
