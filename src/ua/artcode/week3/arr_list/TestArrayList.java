@@ -3,6 +3,7 @@ package ua.artcode.week3.arr_list;
 import ua.artcode.week3.fin.IPhone;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -63,8 +64,19 @@ public class TestArrayList {
 
         Object o = 78;
 
+        List<String> names = new ArrayList<>();
+        names.add("Yura");
+        String name = names.get(0);
+
+        Object[] arr1 = names.toArray();
+        String[] arr2 = names.toArray(new String[names.size()]);
+
+        List list3 = Arrays.asList(1, 2, 3, "sdf");
+        List list4 = Arrays.asList(arr1);
+        List<String> list5 = Arrays.asList("1", "2", "3");
 
 
+        List<Integer> list6 = new ArrayList<>();
 
     }
 
