@@ -2,9 +2,6 @@ package ua.artcode.recursion.tree_task;
 
 import java.util.List;
 
-/**
- * Created by serhii on 09.04.16.
- */
 public class TreeNodeUtils {
 
     public static int count(TreeNode root){

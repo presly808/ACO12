@@ -23,7 +23,7 @@
 	Head First Design Patterns book
 
     see main patterns
-	Strategy,Observer,AbstractFactoryMethod,Singleton,Facade, 		Proxy,Adapter,MVC
+	Strategy,Observer,AbstractFactoryMethod,Singleton,Facade,Proxy,Adapter,MVC
 
     read head first design patterns
 
