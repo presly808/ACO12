@@ -1,6 +1,9 @@
 package ua.artcode.design_patterns.social_network;
 
 import ua.artcode.design_patterns.social_network.common.SocialNetworkApi;
+import ua.artcode.design_patterns.social_network.exception.InvalidLoginException;
+import ua.artcode.design_patterns.social_network.exception.MyApplicationException;
+import ua.artcode.design_patterns.social_network.exception.SocialNetworkException;
 import ua.artcode.design_patterns.social_network.facebook.FacebookApi;
 import ua.artcode.design_patterns.social_network.observer.ISubscriber;
 import ua.artcode.task.model.Student;
@@ -22,8 +25,21 @@ public class EducationSystemController {
         return socialNetworkApi.createGroup("name");
     }
 
-    public String login(String email, String pass){
-        return socialNetworkApi.login(email, pass);
+    public String login(String email, String pass) throws InvalidLoginException, MyApplicationException {
+
+        if(!email.contains("@")){
+            throw new InvalidLoginException("invalid email");
+        }
+
+        try {
+            String message = socialNetworkApi.login(email, pass);
+            return message;
+        } catch (SocialNetworkException e) {
+            e.printStackTrace();
+            throw new MyApplicationException("social network error");
+        }
+
+
     }
 
     public Course getCourse(int id){

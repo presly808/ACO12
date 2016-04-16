@@ -53,6 +53,6 @@
         * Перестроить элементы в обратном порядке
         * Реализовать итератор
 
-4. Discover next mindmap
+4. Discover next mindmap(xmind file)
  https://drive.google.com/open?id=0B3pUqYFBBsi-a0s0UHp1S1dOc0k
 

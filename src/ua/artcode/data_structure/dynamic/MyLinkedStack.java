@@ -1,12 +1,15 @@
 package ua.artcode.data_structure.dynamic;
 
+import ua.artcode.data_structure.common.MyIterator;
 import ua.artcode.data_structure.common.MyStack;
 import ua.artcode.utils.ds.NodeUtils;
+
+import java.util.Iterator;
 
 /**
  * Created by serhii on 10.04.16.
  */
-public class MyLinkedStack implements MyStack {
+public class MyLinkedStack implements MyStack, Iterable {
 
     private Node top;
 
@@ -36,9 +39,32 @@ public class MyLinkedStack implements MyStack {
     }
 
     @Override
+    public Iterator iterator() {
+        return new MyLinkedStackIterator();
+    }
+
+    @Override
     public String toString() {
         return "MyLinkedStack{\n" +
                 "top=" + NodeUtils.toStringR(top).replaceAll("->","\n") +
                 '}';
+    }
+
+
+    public class MyLinkedStackIterator implements Iterator {
+
+        private Node iter = top;
+
+        @Override
+        public Object next() {
+            Object ret = iter.val;
+            iter = iter.next;
+            return ret;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return iter != null;
+        }
     }
 }
