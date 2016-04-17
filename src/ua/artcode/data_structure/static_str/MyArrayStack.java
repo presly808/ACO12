@@ -9,17 +9,17 @@ import java.util.Iterator;
 /**
  * Created by serhii on 10.04.16.
  */
-public class MyArrayStack implements MyStack {
+public class MyArrayStack<E> implements MyStack<E> {
 
-    private Object[] mas;
+    private E[] mas;
     private int top;
 
     public MyArrayStack(int size) {
-        mas = new Object[size];
+        mas = (E[])new Object[size];
     }
 
     @Override
-    public void push(Object obj) {
+    public void push(E obj) {
         if(top == mas.length){
             System.out.println("Stack is full");
             return;
@@ -27,16 +27,17 @@ public class MyArrayStack implements MyStack {
         mas[top++] = obj;
     }
 
+
     @Override
-    public Object pop() {
-        Object forRet = mas[--top];
+    public E pop() {
+        E forRet = mas[--top];
         mas[top] = null;
         return forRet;
     }
 
     @Override
-    public Iterator iterator() {
-        return new MyArrayStackIterator(mas,top - 1);
+    public Iterator<E> iterator() {
+        return new MyArrayStackIterator<E>(mas,top - 1);
     }
 
     @Override
@@ -53,19 +54,19 @@ public class MyArrayStack implements MyStack {
     }
 
     // nested, use inner and private
-    public static class MyArrayStackIterator implements Iterator {
+    public static class MyArrayStackIterator<X> implements Iterator<X> {
 
-        private Object[] mas;
+        private X[] mas;
         private int curr;
 
-        public MyArrayStackIterator(Object[] mas, int top) {
+        public MyArrayStackIterator(X[] mas, int top) {
             this.mas = mas;
             curr = top;
         }
 
         @Override
-        public Object next() {
-            Object last = mas[curr];
+        public X next() {
+            X last = mas[curr];
             curr--;
             return last;
         }

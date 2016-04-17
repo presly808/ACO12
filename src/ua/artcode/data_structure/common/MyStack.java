@@ -3,11 +3,11 @@ package ua.artcode.data_structure.common;
 /**
  * Created by serhii on 10.04.16.
  */
-public interface MyStack extends Iterable {
+public interface MyStack<T> extends Iterable<T> {
 
-    void push(Object obj);
+    void push(T obj);
 
-    Object pop();
+    T pop();
 
 
 }
