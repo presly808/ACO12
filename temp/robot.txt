@@ -1,0 +1,1 @@
+id:1,model:NN34,price:100000.00

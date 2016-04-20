@@ -1,6 +1,8 @@
 package ua.artcode.design_patterns.social_network.test;
 
 import ua.artcode.design_patterns.social_network.EducationSystemController;
+import ua.artcode.design_patterns.social_network.exception.InvalidLoginException;
+import ua.artcode.design_patterns.social_network.exception.MyApplicationException;
 import ua.artcode.design_patterns.social_network.facebook.FacebookApi;
 import ua.artcode.design_patterns.social_network.vk.PowerPoint;
 import ua.artcode.design_patterns.social_network.vk.VkApi;
@@ -12,7 +14,7 @@ import ua.artcode.design_patterns.social_network.vk.VkServer;
 public class TestStrategy {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidLoginException, MyApplicationException {
         EducationSystemController systemController = new EducationSystemController();
 
         systemController.setSocialNetworkApi(new FacebookApi());
