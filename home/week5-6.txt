@@ -1,0 +1,44 @@
+1. Exceptions -> hierarchy
+	types: unchecked, checked(try-catch or throws)
+
+   Generics
+	lifecycle
+		declare, use, define
+	wildcard
+	scope -> class, method
+
+	examples in java 
+
+	How to use gnerics in a hierarchy (is-a realtion)
+
+   java.io.*
+         byte			char
+	InputStream		Reader
+	OutputStream		Writer
+
+	learn methods of above classes
+
+	hierarchy
+	http://flylib.com/books/2/33/1/html/2/files/09fig04.gif
+	http://i.stack.imgur.com/xZEw4.gif
+
+   design pattern Adapter, Decorator
+
+   class File
+
+   Serialization, Deserialization
+	ObjectInputStream, ObjectOutputStream
+
+	interface Serializable
+   
+   Recommedation 
+	always close output stream
+		finally or try-with-resources
+
+2. https://www.codecademy.com/learn/learn-the-command-line
+
+3. design pattern mvc
+
+4. little video about task
+	https://youtu.be/IQOqoWdcwpk?list=PLvmHg49t5OCQeODC20iDQpBOXFXHJz2em&t=5177
+
