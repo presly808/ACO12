@@ -1,8 +1,8 @@
 package ua.artcode.taxi.test;
 
-import ua.artcode.taxi.utils.geolocation.GoogleMapsAPI;
-import ua.artcode.taxi.utils.geolocation.GoogleMapsAPIImpl;
-import ua.artcode.taxi.utils.geolocation.Location;
+import ua.artcode.taxi.utils.geolocation.controller.GoogleMapsAPI;
+import ua.artcode.taxi.utils.geolocation.controller.GoogleMapsAPIImpl;
+import ua.artcode.taxi.utils.geolocation.controller.Location;
 
 /**
  * Created by serhii on 23.04.16.

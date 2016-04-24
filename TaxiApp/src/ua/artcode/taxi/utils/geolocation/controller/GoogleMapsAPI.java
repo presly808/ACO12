@@ -1,4 +1,4 @@
-package ua.artcode.taxi.utils.geolocation;
+package ua.artcode.taxi.utils.geolocation.controller;
 
 /**
  * Created by serhii on 20.12.15.

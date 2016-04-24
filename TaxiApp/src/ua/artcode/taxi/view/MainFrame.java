@@ -14,8 +14,6 @@ public class MainFrame extends JFrame {
 
     private UserService userService;
 
-
-
     public MainFrame(UserService userService) throws HeadlessException {
 
         this.userService = userService;

@@ -1,4 +1,4 @@
-package ua.artcode.taxi.utils.geolocation;
+package ua.artcode.taxi.utils.geolocation.controller;
 
 
 import com.google.gson.*;
@@ -6,6 +6,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import ua.artcode.taxi.utils.geolocation.model.LocationSearchResult;
+import ua.artcode.taxi.utils.geolocation.model.Result;
+import ua.artcode.taxi.utils.geolocation.model.WayPoints;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +21,7 @@ import java.util.Scanner;
  */
 public class GoogleMapsAPIImpl implements GoogleMapsAPI {
 
-
+    private Gson gson = new Gson();
 
     public static final String GET_ADDRESS_FORMATTED_QUERY_TEMPLATE =
             "https://maps.googleapis.com/maps/api/geocode/json?address=%s,%s,%s&key=%s";
@@ -38,8 +41,13 @@ public class GoogleMapsAPIImpl implements GoogleMapsAPI {
 
         try {
             String jsonResponse = sendGetRequest(preparedQuery);
-            return convert(jsonResponse);
-        } catch (IOException | ParseException e) {
+            // TODO replace using marshalling, dont convert
+            LocationSearchResult locationSearchResult = gson.fromJson(jsonResponse, LocationSearchResult.class);
+            Result result = locationSearchResult.getResults().get(0);
+            ua.artcode.taxi.utils.geolocation.model.Location googleLocation = result.getGeometry().getLocation();
+
+            return new Location(result.getFormattedAddress(), googleLocation.getLat(),googleLocation.getLng(), result.getPlaceId());
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -55,9 +63,16 @@ public class GoogleMapsAPIImpl implements GoogleMapsAPI {
         final String preparedQuery = String.format(GET_ADDRESS_FORMATTED_QUERY_TEMPLATE, prepareQueryReplaceSpaces((houseNum + " " + street)), city, country, GOOGLE_API_KEY);
 
         try {
+
             String jsonResponse = sendGetRequest(preparedQuery);
-            return convert(jsonResponse);
-        } catch (IOException | ParseException e) {
+            LocationSearchResult locationSearchResult = gson.fromJson(jsonResponse, LocationSearchResult.class);
+
+            Result result = locationSearchResult.getResults().get(0);
+            ua.artcode.taxi.utils.geolocation.model.Location googleLocation = result.getGeometry().getLocation();
+
+            return new Location(result.getFormattedAddress(), googleLocation.getLat(),googleLocation.getLng(), result.getPlaceId());
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -118,6 +133,8 @@ public class GoogleMapsAPIImpl implements GoogleMapsAPI {
             //todo use gsoup library for better mapping
             String body = sendGetRequest(formattedQuery);
 
+            WayPoints wayPoints = gson.fromJson(body, WayPoints.class);
+
             JsonParser jsonParser = new JsonParser();
             JsonElement element = jsonParser.parse(body);
 
@@ -127,10 +144,9 @@ public class GoogleMapsAPIImpl implements GoogleMapsAPI {
             JsonArray legs = asJsonObject1.getAsJsonArray("legs");
             JsonObject asJsonObject2 = legs.get(0).getAsJsonObject();
             JsonPrimitive jsonObject = asJsonObject2.getAsJsonObject("distance").getAsJsonPrimitive("value");
-            //System.out.println(jsonObject.toString());
 
-            return Double.parseDouble(jsonObject.getAsString());
-            //System.out.println(body);
+
+            return wayPoints.getRoutes().get(0).getLegs().get(0).getDistance().getValue();
         } catch (IOException e) {
             e.printStackTrace();
         }
