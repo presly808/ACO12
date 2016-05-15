@@ -1,0 +1,67 @@
+1.
+
+	Exceptions -> Unchecked, Checked
+	Handle checked excpetions -> throws, try-catch 
+
+	Generics
+		problem
+		scope (class, method)
+
+ 	java.io.*;
+
+    	class File
+    	absolute and relative paths (differences)
+
+    	byte Stream (InputStream, OutputStream)
+    	char streams (Reader, Writer)
+
+    	!!! always close OutputStream and Writer
+
+	learn
+	java collections
+		(xmind file, download and open)
+		https://drive.google.com/file/d/0B3pUqYFBBsi-a0s0UHp1S1dOc0k/view
+		video
+		https://www.youtube.com/watch?v=U_xtKiYo1is&index=13&list=PLvmHg49t5OCQeODC20iDQpBOXFXHJz2em
+		https://www.youtube.com/watch?v=IQOqoWdcwpk&index=14&list=PLvmHg49t5OCQeODC20iDQpBOXFXHJz2em
+
+2. https://www.codecademy.com/learn/learn-the-command-line
+
+3. https://www.codecademy.com/learn/learn-git
+
+4. Implement class FileHelper
+       - find file(dir)
+       - show directoryContent
+       - show file (content)
+       - delete file or dir
+       - copy file(dir)
+       - move(rename) file or dir	
+       - compare content of files
+       - deepFind (do search in file name and in file content by keyword)
+           * result of search can be written into file
+
+       -* find in file system without recursion
+
+5. Implement Map interface based on hashtable
+                watch video above
+   Must use: Generics, Exceptions,
+                loadFactor(rehashing)
+                implement Iterator (for keys and values)
+
+             !Your type that you put in map as key must override (equals, hashCode)
+
+
+6. Implement BinarySearchTree
+    methods
+    - add
+    - traverse
+    - findMin
+    - findMax
+    - delete
+
+    * tree optimization
+        * rotate right
+        * rotate left
+    * implement iterator
+
+7. Finish your project(TaxiApp)

@@ -35,7 +35,8 @@ public class StringUtils {
         Map<String,Object> keys = new HashMap<>();
         keys.put("name", "Serhii");
         keys.put("age", 23);
-        String formatted = dictFormat("My name is %(name)s, age %(age)d", keys);
+        keys.put("salary", 23.3434);
+        String formatted = dictFormat("My name is %(name)s, age %(age)d, salary %(salary)f", keys);
 
         System.out.println(formatted.equals("My name is Serhii, age 23"));
         System.out.println(formatted);

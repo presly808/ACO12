@@ -16,12 +16,11 @@
                     new google.maps.Point(0, 0),
                     new google.maps.Point(12, 35));
 
-            var myLocation = new google.maps.LatLng(50.4525566, 30.5143636);
+            var myLocation = new google.maps.LatLng(${myLocationLat},${myLocationLng});
 
-            var zoom = 10;
+            var zoom = ${zoom};
 
-            var locations = [["location1", 50.2025566, 30.5143636],
-                ["location2", 50.1025566, 30.1043636]];
+            var locations = ${locations};
 
             var mapProp = {
                 //send via java
@@ -45,13 +44,13 @@
 
             for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    position: new google.maps.LatLng(locations[i][0], locations[i][1]),
                     map: map
                 });
 
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
                     return function () {
-                        infowindow.setContent(locations[i][0]);
+                        //infowindow.setContent(locations[i][0]);
                         infowindow.open(map, marker);
                     }
                 })(marker, i));

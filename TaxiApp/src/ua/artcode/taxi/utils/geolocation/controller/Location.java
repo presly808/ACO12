@@ -9,6 +9,13 @@ public class Location {
     private double lat;
     private double lng;
     private String placeId;
+    private String label;
+
+    public Location(double lat, double lng, String label) {
+        this.lat = lat;
+        this.lng = lng;
+        this.label = label;
+    }
 
     public Location(String formattedAddress, double lat, double lng) {
         this.formattedAddress = formattedAddress;
@@ -57,12 +64,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "formattedAddress='" + formattedAddress + '\'' +
-                ", lat=" + lat +
-                ", lng=" + lng +
-                ", placeId='" + placeId + '\'' +
-                '}';
+        return String.format("[%s,%s]", lat, lng);
     }
 
 }
